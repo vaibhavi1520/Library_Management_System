@@ -25,9 +25,9 @@ def sidebar_excel_navigation():
 
     st.sidebar.divider()
 
-    # Excel style menu items
+    
     for label, page in EXCEL_MENU:
-        # user restriction (optional)
+        
         if page == "user_management" and role != "admin":
             continue
 
@@ -37,7 +37,7 @@ def sidebar_excel_navigation():
 
     st.sidebar.divider()
 
-    # Bottom Controls (Home / Logout like Excel)
+   
     col1, col2 = st.sidebar.columns(2)
 
     with col1:
