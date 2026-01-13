@@ -15,7 +15,7 @@ def admin_login():
     if st.button("Login as Admin", key="admin_login_btn"):
         if u == "adm" and p == "adm":
             st.session_state["auth_role"] = "admin"
-            st.session_state["page"] = "admin_dashboard"
+            st.session_state["page"] = "reports"
             st.success("Welcome Admin ✅")
             st.rerun()
         else:
@@ -31,7 +31,7 @@ def user_login():
     if st.button("Login as User", key="user_login_btn"):
         if u in USER_CREDENTIALS and USER_CREDENTIALS[u] == p:
             st.session_state["auth_role"] = "user"
-            st.session_state["page"] = "user_dashboard"
+            st.session_state["page"] = "reports"
             st.success("Login Success ✅")
             st.rerun()
         else:
