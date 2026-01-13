@@ -5,6 +5,12 @@ from modules.db import MockDatabase
 from modules.auth import admin_login, user_login
 from modules.user_dashboard import user_dashboard
 from modules.admin_dashboard import admin_dashboard
+from modules.pages.transactions_page import transactions_page
+from modules.pages.issue_requests_page import issue_requests_page
+from modules.pages.pay_fine_page import pay_fine_page
+from modules.pages.confirmation_page import confirmation_page
+from modules.pages.user_management_page import user_management_page
+
 
 st.set_page_config(page_title="Library Management System", layout="wide")
 
@@ -60,6 +66,21 @@ def main():
 
     elif page == "user_dashboard" and st.session_state["auth_role"] == "user":
         user_dashboard(db)
+    
+    elif page == "transactions":
+        transactions_page(db)
+    
+    elif page == "issue_requests":
+        issue_requests_page(db)
+    
+    elif page == "pay_fine":
+        pay_fine_page(db)
+
+    elif page == "confirmation":
+        confirmation_page()
+
+    elif page == "user_management":
+        user_management_page()
 
     else:
         st.error("Unauthorized access or invalid route.")
