@@ -1,5 +1,5 @@
 import streamlit as st
-from modules.transactions import check_availability, issue_book, return_book
+from modules.transactions_flow import check_availability, issue_book, return_book
 
 def user_dashboard(db):
     st.title("👤 User Dashboard")
